@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backennew-deploy
+  labels:
+    app: nova-backendnew
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nova-backendnew
+  template:
+    metadata:
+      labels:
+        app: nova-backendnew
+    spec:
+      containers:
+      - name: nodejs-backendnew
+        image: hello-world
+        ports:
+        - containerPort: 3005
+      #   volumeMounts:

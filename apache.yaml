@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appache-deploy
+  labels:
+    app: apache-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apache-test
+  template:
+    metadata:
+      labels:
+        app: apache-test
+    spec:
+      containers:
+      - name: apache-container
+        image: mongo
+        ports:
+        - containerPort: 27017

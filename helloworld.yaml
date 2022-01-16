@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodejs-backendnew
-        image: hello-world
+        image: hello-world:latest
         ports:
         - containerPort: 3005
       #   volumeMounts:
